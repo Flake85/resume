@@ -1,0 +1,73 @@
+// Import Bootstrap-Vue Framework
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+
+// Import FontAwesome variables to set fonts path
+@import "~@fortawesome/fontawesome-free/scss/variables";
+$fa-font-path: "../webfonts" !default;
+
+// Import FontAwesome Core
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
+// Import FontAwesome Icons
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+//Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+//transitions for routing
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+//card
+.card-text{
+  padding: 25px;
+  clear: both;
+}
+.card{
+  margin-bottom: 50px;
+}
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+//Dark Mode
+.darkCardText{
+  color: #f8f9fa;
+}
+.dayCardText{
+  color: #343a40;
+}
+
+//Active Nav Link Color
+.nav-link.router-link-exact-active{
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+//font for Titles(Card/Jumbotron/etc)
+.headerFont{
+  font-family: 'Courgette', cursive;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+//Preview
+.previewHR{
+  background-color: #343a40;
+}
