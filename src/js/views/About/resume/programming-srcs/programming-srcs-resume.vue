@@ -1,9 +1,8 @@
 <template>
     <div id="programming-srcs">
-        <h3 id="resources"
-            align="center"
-            class="text-white bg-info headerFont">
-            <i class="fas fw fa-code"></i><br> Programming Resources
+        <h3 class="text-white bg-info headerFont resources">
+            <i class="fas fw fa-code"></i><br>
+            Programming Resources
         </h3>
         <sql-srcs /><hr>
         <html-srcs /><hr>
@@ -39,3 +38,9 @@
         },
     }
 </script>
+
+<style>
+    .resources {
+        text-align: center;
+    }
+</style>

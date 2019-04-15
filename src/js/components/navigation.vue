@@ -8,14 +8,14 @@
                     <b-btn variant="info"><router-link to="/" exact class="nav-link">Home</router-link></b-btn>
                     <b-btn variant="info"><router-link to="/contact" exact class="nav-link">Contact</router-link></b-btn>
                     <div>
-                        <b-dropdown id="ddown-header" variant="info" right text="About" align="center" class="nav-link">
+                        <b-dropdown variant="info" right text="About" class="nav-link">
                             <b-dropdown-item><router-link to="/about" exact>About Flechas</router-link></b-dropdown-item>
                             <b-dropdown-item><router-link to="/resume" exact>Resume'</router-link></b-dropdown-item>
                         </b-dropdown>
                     </div>
                     <div>
-                        <b-dropdown id="ddown-header" variant="info" right text="Extras" align="center" class="nav-link">
-                            <b-dropdown-item ><router-link to="/creator" exact >resume creator</router-link></b-dropdown-item>
+                        <b-dropdown variant="info" right text="Extras" class="nav-link">
+                            <b-dropdown-item ><router-link to="/creator" exact >Resume Creator</router-link></b-dropdown-item>
                             <b-dropdown-item v-if="darkMode" @click="toggleDarkMode" >
                                 Dark Mode &#10004;
                             </b-dropdown-item>

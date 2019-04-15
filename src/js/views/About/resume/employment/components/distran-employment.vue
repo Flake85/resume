@@ -4,7 +4,8 @@
             <img src="https://www.distransteel.com/hs-fs/hub/48397/file-2023361943-png/Steel_DIS-TRAN_Logo_1-6.png?width=1654&name=Steel_DIS-TRAN_Logo_1-6.png"
                  class="logo"
                  height="40"
-                 width="180"></img>
+                 width="180"
+                 alt="Distran Logo">
         </div>
         <div class="row">
             <p class="col-4"><strong><a href="https://www.distransteel.com/" target="_blank">Dis-Tran Steel</a></strong></p>

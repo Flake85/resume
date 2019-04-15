@@ -1,7 +1,7 @@
 <template>
     <div id="old_south">
         <div class="row">
-            <img class="logo" src="https://oldsouthfabricators.com/img/logo.png" height="80" width="160" alt="Old South Fabricators Logo" ></img>
+            <img class="logo" src="https://oldsouthfabricators.com/img/logo.png" height="80" width="160" alt="Old South Fabricators Logo" >
         </div>
         <div class="row">
             <p class="col-4"><strong><a href="https://oldsouthfabricators.com/index.html" target="_blank">Old South Fabricators</a> </strong></p>

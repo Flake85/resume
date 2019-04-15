@@ -1,6 +1,6 @@
 <template>
     <div id="education">
-        <h3 align="center" class="text-light bg-info headerFont"><i class="fas fw fa-graduation-cap"></i><br> Formal Education</h3>
+        <h3 id="ed_title" class="text-light bg-info headerFont"><i class="fas fw fa-graduation-cap"></i><br> Formal Education</h3>
         <MMI /><hr>
         <pineville-high /><hr>
         <scroll-link />
@@ -17,3 +17,10 @@
         components: { PinevilleHigh, MMI, ScrollLink }
     }
 </script>
+
+<style>
+    #ed_title {
+        text-align: center;
+    }
+</style>
+

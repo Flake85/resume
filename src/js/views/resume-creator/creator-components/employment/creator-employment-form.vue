@@ -24,15 +24,14 @@
                 <b-form-input id="title1" v-model="title1" type="text" placeholder="Job Title #1"></b-form-input>
 
                 <b-form-group horizontal :label="jobDutyTitle1" label-class="text-sm" label-size="sm">
-                    <b-form-textarea v-if="titleOneTaskCount > 0" v-model="task1A" id="tasks1" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
-                    <b-form-textarea v-if="titleOneTaskCount > 1" v-model="task1B" id="tasks1" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
-                    <b-form-textarea v-if="titleOneTaskCount > 2" v-model="task1C" id="tasks1" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
-                    <b-form-textarea v-if="titleOneTaskCount > 3" v-model="task1D" id="tasks1" type="text" rows="2" placeholder="Job Duty #4"></b-form-textarea>
-                    <b-form-textarea v-if="titleOneTaskCount > 4" v-model="task1E" id="tasks1" type="text" rows="2" placeholder="Job Duty #5"></b-form-textarea>
-                    <b-form-textarea v-if="titleOneTaskCount > 5" v-model="task1F" id="tasks1" type="text" rows="2" placeholder="Job Duty #6"></b-form-textarea>
+                    <b-form-textarea v-if="titleOneTaskCount > 0" v-model="task1A" class="tasks1" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
+                    <b-form-textarea v-if="titleOneTaskCount > 1" v-model="task1B" class="tasks1" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
+                    <b-form-textarea v-if="titleOneTaskCount > 2" v-model="task1C" class="tasks1" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
+                    <b-form-textarea v-if="titleOneTaskCount > 3" v-model="task1D" class="tasks1" type="text" rows="2" placeholder="Job Duty #4"></b-form-textarea>
+                    <b-form-textarea v-if="titleOneTaskCount > 4" v-model="task1E" class="tasks1" type="text" rows="2" placeholder="Job Duty #5"></b-form-textarea>
+                    <b-form-textarea v-if="titleOneTaskCount > 5" v-model="task1F" class="tasks1" type="text" rows="2" placeholder="Job Duty #6"></b-form-textarea>
                     <b-form-text id="addTask1"
                                  text-variant="light"
-                                 align="left"
                                  class="clickable"
                                  @click="addTitleOneTask"
                                  v-if="titleOneTaskCount < 6">
@@ -42,7 +41,6 @@
                 </b-form-group>
                 <b-form-text id="addTitle1"
                              text-variant="light"
-                             align="left"
                              class="clickable"
                              @click="addTitleField"
                              v-if="title_count < 2">
@@ -56,15 +54,14 @@
             <b-form-group label-for="title2" horizontal label="Job Title:" label-class="text-sm" label-size="sm">
                 <b-form-input id="title2" v-model="title2" type="text" placeholder="Job Title #2"></b-form-input>
                 <b-form-group label-for="tasks2" horizontal :label="jobDutyTitle2" label-class="text-sm" label-size="sm">
-                    <b-form-textarea v-if="title2TaskCount > 0" v-model="task2A" id="tasks2" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
-                    <b-form-textarea v-if="title2TaskCount > 1" v-model="task2B" id="tasks2" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
-                    <b-form-textarea v-if="title2TaskCount > 2" v-model="task2C" id="tasks2" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
-                    <b-form-textarea v-if="title2TaskCount > 3" v-model="task2D" id="tasks2" type="text" rows="2" placeholder="Job Duty #4"></b-form-textarea>
-                    <b-form-textarea v-if="title2TaskCount > 4" v-model="task2E" id="tasks2" type="text" rows="2" placeholder="Job Duty #5"></b-form-textarea>
-                    <b-form-textarea v-if="title2TaskCount > 5" v-model="task2F" id="tasks2" type="text" rows="2" placeholder="Job Duty #6"></b-form-textarea>
+                    <b-form-textarea v-if="title2TaskCount > 0" v-model="task2A" class="tasks2" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
+                    <b-form-textarea v-if="title2TaskCount > 1" v-model="task2B" class="tasks2" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
+                    <b-form-textarea v-if="title2TaskCount > 2" v-model="task2C" class="tasks2" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
+                    <b-form-textarea v-if="title2TaskCount > 3" v-model="task2D" class="tasks2" type="text" rows="2" placeholder="Job Duty #4"></b-form-textarea>
+                    <b-form-textarea v-if="title2TaskCount > 4" v-model="task2E" class="tasks2" type="text" rows="2" placeholder="Job Duty #5"></b-form-textarea>
+                    <b-form-textarea v-if="title2TaskCount > 5" v-model="task2F" class="tasks2" type="text" rows="2" placeholder="Job Duty #6"></b-form-textarea>
                     <b-form-text id="addTask2"
                                  text-variant="light"
-                                 align="left"
                                  class="clickable"
                                  @click="addTitle2Task" v-if="title2TaskCount < 6">
                         <i class="far fw fa-plus-square"> </i>
@@ -73,7 +70,6 @@
                 </b-form-group>
                 <b-form-text id="addTitle2"
                              text-variant="light"
-                             align="left"
                              class="clickable" @click="addTitleField" v-if="title_count < 3">
                     <i class="far fw fa-plus-square"> </i>
                     Add New Job Title
@@ -86,15 +82,14 @@
                 <b-form-input id="title3" v-model="title3" type="text" placeholder="Job Title #3"></b-form-input>
 
                 <b-form-group horizontal :label="jobDutyTitle3" label-class="text-sm" label-size="sm">
-                    <b-form-textarea v-if="title3TaskCount > 0" v-model="task13A" id="tasks3" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
-                    <b-form-textarea v-if="title3TaskCount > 1" v-model="task13B" id="tasks3" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
-                    <b-form-textarea v-if="title3TaskCount > 2" v-model="task13C" id="tasks3" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
-                    <b-form-textarea v-if="title3TaskCount > 3" v-model="task13D" id="tasks3" type="text" rows="2" placeholder="Job Duty #4"></b-form-textarea>
-                    <b-form-textarea v-if="title3TaskCount > 4" v-model="task13E" id="tasks3" type="text" rows="2" placeholder="Job Duty #5"></b-form-textarea>
-                    <b-form-textarea v-if="title3TaskCount > 5" v-model="task13F" id="tasks3" type="text" rows="2" placeholder="Job Duty #6"></b-form-textarea>
+                    <b-form-textarea v-if="title3TaskCount > 0" v-model="task13A" class="tasks3" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
+                    <b-form-textarea v-if="title3TaskCount > 1" v-model="task13B" class="tasks3" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
+                    <b-form-textarea v-if="title3TaskCount > 2" v-model="task13C" class="tasks3" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
+                    <b-form-textarea v-if="title3TaskCount > 3" v-model="task13D" class="tasks3" type="text" rows="2" placeholder="Job Duty #4"></b-form-textarea>
+                    <b-form-textarea v-if="title3TaskCount > 4" v-model="task13E" class="tasks3" type="text" rows="2" placeholder="Job Duty #5"></b-form-textarea>
+                    <b-form-textarea v-if="title3TaskCount > 5" v-model="task13F" class="tasks3" type="text" rows="2" placeholder="Job Duty #6"></b-form-textarea>
                     <b-form-text id="addTask3"
                                  text-variant="light"
-                                 align="left"
                                  class="clickable"
                                  @click="addTitle3Task"
                                  v-if="title3TaskCount < 6">
@@ -104,7 +99,6 @@
                 </b-form-group>
                 <b-form-text id="addTitle3"
                              text-variant="light"
-                             align="left"
                              class="clickable"
                              @click="addTitleField"
                              v-if="title_count < 3">
@@ -186,7 +180,7 @@
     }
 </script>
 <style>
-    #tasks1, #tasks2, #tasks3{
+    .tasks1, .tasks2, .tasks3{
         margin-top: 8px;
     }
 </style>

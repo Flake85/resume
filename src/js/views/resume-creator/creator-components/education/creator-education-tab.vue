@@ -1,7 +1,7 @@
 <template>
     <b-card :bg-variant="cardBG">
-        <h3 align="left">Education </h3>
-        <p align="left"> ({{ schoolCount }} Remaining)</p>
+        <h3 class="left_align">Education </h3>
+        <p class="left_align"> ({{ schoolCount }} Remaining)</p>
         <div >
             <b-tabs small v-model="tabIndex" pills>
                 <b-tab :title="schoolName1" :title-link-class="activeTabBG(0)">
@@ -77,3 +77,9 @@
         }
     }
 </script>
+
+<style>
+    .left_align {
+        text-align: left;
+    }
+</style>

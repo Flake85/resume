@@ -4,7 +4,7 @@
             <img class="uniti-img logo"
                  src="https://www.uniti-global.com/img/hlogo.png"
                  height="50" width="160"
-                 alt="Uniti Global Logo"></img>
+                 alt="Uniti Global Logo">
         </div>
         <div class="row">
             <p class="col-4"><strong><a

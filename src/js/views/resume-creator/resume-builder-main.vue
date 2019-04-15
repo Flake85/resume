@@ -8,8 +8,7 @@
                         header-text-variant="white"
                         header-text="Preview"
                         class="card resume-card"
-                        bg-variant="info"
-                        align="center">
+                        bg-variant="info">
                     <div :class="cardText">
                         <div>
                             <b-tabs small v-model="tabIndex" pills>
@@ -32,25 +31,19 @@
                                                    @add-education3="addEducation3"
                                                    @add-education4="addEducation4"
                                                    @add-education5="addEducation5" /></b-tab>
-
                                 <b-tab title="References" :title-link-class="activeTabBG(3)">
                                     <references-tab :dark-mode="darkMode" @add-references="addReferences" />
                                 </b-tab>
                             </b-tabs>
-
                         </div>
                     </div>
                 </b-card>
             </div>
-
             <div class="col-lg-6">
                 <live-preview :dark-mode="darkMode" :contact-info="contactInfo" :employer-info="employerInfo"
                               :education-info="educationInfo" :reference-info="referenceInfo" />
             </div>
         </div>
-
-
-
     </div>
 </template>
 

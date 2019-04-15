@@ -27,11 +27,8 @@
                 <b-form-input v-if="meritCount >= 4" class="merit" v-model="merit4" type="text" placeholder="(E.g. degree, diploma, certificate, etc)"></b-form-input>
                 <b-form-input v-if="meritCount >= 5" class="merit" v-model="merit5" type="text" placeholder="(E.g. degree, diploma, certificate, etc)"></b-form-input>
                 <b-form-input v-if="meritCount >= 6" class="merit" v-model="merit6" type="text" placeholder="(E.g. degree, diploma, certificate, etc)"></b-form-input>
-
-
                 <b-form-text id="addMerit"
                              text-variant="light"
-                             align="left"
                              class="clickable"
                              @click="addMeritField"
                              v-if="meritCount < 6">
@@ -40,9 +37,6 @@
                 </b-form-text>
             </b-form-group>
         </div>
-
-
-
         <b-btn v-if="schoolName === ''" @click="updateEducation" :variant="btnColor" btnColor>Update School Info</b-btn>
         <b-btn v-else @click="updateEducation" :variant="btnColor">Update {{ schoolName }}</b-btn>
     </b-card>

@@ -4,9 +4,7 @@
             <p class="col-6"><strong>Currently Learning</strong></p>
         </div>
         <div class="row">
-            <ul>
-                <li>PHP 7.2</li>
-            </ul>
+            <ul><li>PHP 7.2</li></ul>
         </div>
     </div>
 </template>

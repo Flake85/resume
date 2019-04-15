@@ -2,7 +2,7 @@
     <div id="pools">
         <div class="row">
             <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/181589_141681999228940_5331357_n.jpg?_nc_cat=102&_nc_ht=scontent-dfw5-1.xx&oh=eeb9960c1427bef706e3a4c1ca64b705&oe=5CF2481A"
-                 class="logo" height="50" width="160" alt="D&J Pools Logo"></img>
+                 class="logo" height="50" width="160" alt="D&J Pools Logo">
         </div>
         <div class="row">
             <p class="col-4"><strong><a href="https://www.facebook.com/djpoolsLA/" target="_blank">D&J Pools</a></strong></p>

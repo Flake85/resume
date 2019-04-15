@@ -1,13 +1,13 @@
 <template>
     <div id="about" class="container">
         <b-card border-variant="info"
-                header='<h3 class="headerFont">About Flechas <i class="fas fw fa-address-book" /></h3>'
+                header='About Flechas'
                 header-bg-variant="info"
                 header-text-variant="light"
                 :bg-variant="cardBG">
             <div class="row" >
                 <b-media class="col">
-                    <img src="https://i.imgur.com/vMnEkLC.jpg?2" class="float-left img-responsive" alt="Picture of Flechas"></img>
+                    <img src="https://i.imgur.com/vMnEkLC.jpg?2" class="float-left img-responsive" alt="Picture of Flechas" />
                     <p :class="cardText">
                         My name is Flechas Bentley and I'm {{ age }} years old. "Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -46,7 +46,7 @@
                         commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
                         nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
                     </p>
-                    <router-link :darkMode="darkMode" to="/resume" align="center">Click here to view my employment history!</router-link>
+                    <router-link :darkMode="darkMode" to="/resume" >Click here to view my employment history!</router-link>
                 </b-media>
             </div>
         </b-card>
