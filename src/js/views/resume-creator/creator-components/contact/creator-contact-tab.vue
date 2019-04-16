@@ -96,14 +96,14 @@
         },
         data(){
             return{
-                f_name: 'Flechas',
-                l_name: 'Bentley',
-                street_address: '210 Nalley Drive',
-                city: 'Pineville',
-                zip: '71360',
-                email: 'Flechas.Bentley@gmail.com',
-                contact_number: '(318)880-3181',
-                state: 'LA',
+                f_name: '',
+                l_name: '',
+                street_address: '',
+                city: '',
+                zip: '',
+                email: '',
+                contact_number: '',
+                state: '',
                 state_options: states
             }
         },
