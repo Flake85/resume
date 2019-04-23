@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="resume-nav">
-                        <div class="row " >
+                        <div class="row" >
                             <img  src="https://i.imgur.com/vMnEkLC.jpg?2"
                                   alt="Picture of Flechas and his family"
-                                  class="picture">
+                                  class="picture row">
                         </div>
                         <vertical-btns />
                         <horizontal-btns />
@@ -38,7 +38,6 @@
     import Employment from "./employment/main-employment";
     import VerticalBtns from './resume-components/vertical-stck-btns'
     import HorizontalBtns from "./resume-components/horizontal-stck-btns";
-
     export default {
         name: 'resume',
         props: {
@@ -81,7 +80,8 @@
             position: static;
         }
         .picture{
-            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 </style>

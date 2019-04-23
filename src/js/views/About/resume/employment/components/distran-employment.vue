@@ -15,7 +15,7 @@
         <div class="row">
             <p><strong>Machine Operator</strong></p>
         </div>
-        <div class="row">
+        <div class="row resume-ul">
             <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.

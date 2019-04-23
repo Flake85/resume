@@ -4,7 +4,7 @@
             <p class="col-6"><strong><a href="https://www.rpsb.us/PHS_rpsb/" target="_blank">Pineville High School</a></strong></p>
             <p class="col-6"><strong>Pineville, LA</strong></p>
         </div>
-        <div class="row">
+        <div class="row resume-ul">
             <ul>
                 <li>Class of 2004</li>
                 <li>Received Diploma</li>

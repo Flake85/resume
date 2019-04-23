@@ -4,7 +4,7 @@
             <p class="col-6"><strong><a href="https://www.uti.edu/programs/motorcycle" target="_blank">Motorcycle Mechanics Institute</a></strong></p>
             <p class="col-6"><strong>Orlando, FL</strong></p>
         </div>
-        <div class="row">
+        <div class="row resume-ul">
             <ul>
                 <li>2006 - 2007</li>
                 <li>Completed basic classes</li>

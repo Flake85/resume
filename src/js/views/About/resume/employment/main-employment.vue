@@ -1,7 +1,8 @@
 <template>
     <div id="employment">
-        <h3 id="em_title"
-            class="text-white bg-info headerFont"><i class="fas fa-tasks"></i><br>Employment History</h3>
+        <h3 id="em_title" class="text-white bg-info headerFont"><i class="fas fa-tasks"></i><br>
+            Employment History
+        </h3>
         <uniti /><hr>
         <pools /><hr>
         <distran /><hr>
@@ -15,16 +16,10 @@
     import Pools from './components/djPools-employment';
     import Distran from './components/distran-employment';
     import old_south from './components/old_south-employment';
-    import scrollLink from './../common resume/link-top-of-page';
+    import scrollLink from '../common_resume/link-top-of-page';
 
     export default {
         name: 'employment',
         components: { Uniti, Pools, Distran, old_south, scrollLink }
     }
 </script>
-
-<style>
-    #em_title {
-        text-align: center;
-    }
-</style>

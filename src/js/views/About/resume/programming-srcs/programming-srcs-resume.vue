@@ -4,13 +4,15 @@
             <i class="fas fw fa-code"></i><br>
             Programming Resources
         </h3>
-        <sql-srcs /><hr>
-        <html-srcs /><hr>
-        <css-srcs /><hr>
-        <javascript-srcs /><hr>
-        <front-libraries /><hr>
-        <tools-srcs /><hr>
-        <learning-srcs /><hr>
+        <div class="resume-ul">
+            <sql-srcs /><hr>
+            <html-srcs /><hr>
+            <css-srcs /><hr>
+            <javascript-srcs /><hr>
+            <front-libraries /><hr>
+            <tools-srcs /><hr>
+            <learning-srcs /><hr>
+        </div>
         <scroll-link />
     </div>
 </template>
@@ -23,7 +25,7 @@
     import FrontLibraries from "./components/frontLibraries-srcs";
     import ToolsSrcs from "./components/tools-srcs";
     import LearningSrcs from "./components/learning-srcs";
-    import scrollLink from './../common resume/link-top-of-page';
+    import scrollLink from '../common_resume/link-top-of-page';
     export default {
         name: 'programming-srcs',
         components: {
@@ -38,9 +40,3 @@
         },
     }
 </script>
-
-<style>
-    .resources {
-        text-align: center;
-    }
-</style>

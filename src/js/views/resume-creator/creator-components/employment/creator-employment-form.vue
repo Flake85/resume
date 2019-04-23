@@ -1,29 +1,29 @@
 <template>
     <b-card :bg-variant="secondaryCardBG" text-variant="light">
-        <b-form-group label="Company:" horizontal label-class="text-sm" label-for="f_name" label-size="sm">
+        <b-form-group label="Company:" label-cols="3" label-class="text-sm-right" label-for="f_name" label-size="sm">
             <b-form-input id="companyName" v-model="companyName" type="text" placeholder="Company Name"></b-form-input>
         </b-form-group>
-        <b-form-group label="Start Month:" horizontal label-class="text-sm" label-for="startDate" label-size="sm">
+        <b-form-group label="Start Month:" label-cols="3" label-class="text-sm-right" label-for="startDate" label-size="sm">
             <b-form-select id="startMonth" :options="months" v-model="startMonth"></b-form-select>
         </b-form-group>
-        <b-form-group label="Start Year:" horizontal label-class="text-sm" label-for="startYear" label-size="sm">
+        <b-form-group label="Start Year:" label-cols="3" label-class="text-sm-right" label-for="startYear" label-size="sm">
             <b-form-select id="startYear" :options="years" v-model="startYear"></b-form-select>
         </b-form-group>
-        <b-form-group label="End Month:" horizontal label-class="text-sm" label-for="endMonth" label-size="sm">
+        <b-form-group label="End Month:" label-cols="3" label-class="text-sm-right" label-for="endMonth" label-size="sm">
             <b-form-select id="endMonth" v-model="endMonth" :options="months"></b-form-select>
         </b-form-group>
-        <b-form-group label="End Year:" horizontal label-class="text-sm" label-for="endYear" label-size="sm">
+        <b-form-group label="End Year:" label-cols="3" label-class="text-sm-right" label-for="endYear" label-size="sm">
             <b-form-select id="endYear" v-model="endYear" :options="years"></b-form-select>
         </b-form-group>
-        <b-form-group label="Location:" horizontal label-class="text-sm" label-for="location" label-size="sm">
+        <b-form-group label="Location:" label-cols="3" label-class="text-sm-right" label-for="location" label-size="sm">
             <b-form-input id="location" v-model="location" type="text" placeholder="Company Location"></b-form-input>
         </b-form-group>
 
         <div id="jobTitle1">
-            <b-form-group horizontal label="Job Title:" label-class="text-sm" label-for="title" label-size="sm">
+            <b-form-group label-cols="3" label="Job Title:" label-class="text-sm-right" label-for="title" label-size="sm">
                 <b-form-input id="title1" v-model="title1" type="text" placeholder="Job Title #1"></b-form-input>
 
-                <b-form-group horizontal :label="jobDutyTitle1" label-class="text-sm" label-size="sm">
+                <b-form-group label-cols="3" :label="jobDutyTitle1" label-class="text-sm-right" label-size="sm">
                     <b-form-textarea v-if="titleOneTaskCount > 0" v-model="task1A" class="tasks1" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
                     <b-form-textarea v-if="titleOneTaskCount > 1" v-model="task1B" class="tasks1" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
                     <b-form-textarea v-if="titleOneTaskCount > 2" v-model="task1C" class="tasks1" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
@@ -51,9 +51,9 @@
         </div>
 
         <div id="jobTitle2" v-if="title_count >= 2">
-            <b-form-group label-for="title2" horizontal label="Job Title:" label-class="text-sm" label-size="sm">
+            <b-form-group label-for="title2" label-cols="3" label="Job Title:" label-class="text-sm-right" label-size="sm">
                 <b-form-input id="title2" v-model="title2" type="text" placeholder="Job Title #2"></b-form-input>
-                <b-form-group label-for="tasks2" horizontal :label="jobDutyTitle2" label-class="text-sm" label-size="sm">
+                <b-form-group label-for="tasks2" label-cols="3" :label="jobDutyTitle2" label-class="text-sm-right" label-size="sm">
                     <b-form-textarea v-if="title2TaskCount > 0" v-model="task2A" class="tasks2" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
                     <b-form-textarea v-if="title2TaskCount > 1" v-model="task2B" class="tasks2" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
                     <b-form-textarea v-if="title2TaskCount > 2" v-model="task2C" class="tasks2" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>
@@ -78,10 +78,10 @@
         </div>
 
         <div id="jobTitle3" v-if="title_count >= 3">
-            <b-form-group horizontal label="Job Title:" label-class="text-sm" label-for="title" label-size="sm">
+            <b-form-group label-cols="3" label="Job Title:" label-class="text-sm-right" label-for="title" label-size="sm">
                 <b-form-input id="title3" v-model="title3" type="text" placeholder="Job Title #3"></b-form-input>
 
-                <b-form-group horizontal :label="jobDutyTitle3" label-class="text-sm" label-size="sm">
+                <b-form-group label-cols="3" :label="jobDutyTitle3" label-class="text-sm-right" label-size="sm">
                     <b-form-textarea v-if="title3TaskCount > 0" v-model="task13A" class="tasks3" type="text" rows="2" placeholder="Job Duty #1"></b-form-textarea>
                     <b-form-textarea v-if="title3TaskCount > 1" v-model="task13B" class="tasks3" type="text" rows="2" placeholder="Job Duty #2"></b-form-textarea>
                     <b-form-textarea v-if="title3TaskCount > 2" v-model="task13C" class="tasks3" type="text" rows="2" placeholder="Job Duty #3"></b-form-textarea>

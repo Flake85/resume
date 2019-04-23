@@ -1,26 +1,26 @@
 <template>
     <b-card :bg-variant="secondaryCardBG" text-variant="light">
-        <b-form-group label="School:" horizontal label-class="text-sm" label-for="school" label-size="sm">
+        <b-form-group label="School:" label-cols="3" label-class="text-sm-right" label-for="school" label-size="sm">
             <b-form-input id="schoolName" v-model="schoolName" type="text" placeholder="School Name"></b-form-input>
         </b-form-group>
-        <b-form-group label="Start Month:" horizontal label-class="text-sm" label-for="startDate" label-size="sm">
+        <b-form-group label="Start Month:" label-cols="3" label-class="text-sm-right" label-for="startDate" label-size="sm">
             <b-form-select id="startMonth" :options="months" v-model="startMonth"></b-form-select>
         </b-form-group>
-        <b-form-group label="Start Year:" horizontal label-class="text-sm" label-for="startYear" label-size="sm">
+        <b-form-group label="Start Year:" label-cols="3" label-class="text-sm-right" label-for="startYear" label-size="sm">
             <b-form-select id="startYear" :options="years" v-model="startYear"></b-form-select>
         </b-form-group>
-        <b-form-group label="End Month:" horizontal label-class="text-sm" label-for="endMonth" label-size="sm">
+        <b-form-group label="End Month:" label-cols="3" label-class="text-sm-right" label-for="endMonth" label-size="sm">
             <b-form-select id="endMonth" v-model="endMonth" :options="months"></b-form-select>
         </b-form-group>
-        <b-form-group label="End Year:" horizontal label-class="text-sm" label-for="endYear" label-size="sm">
+        <b-form-group label="End Year:" label-cols="3" label-class="text-sm-right" label-for="endYear" label-size="sm">
             <b-form-select id="endYear" v-model="endYear" :options="years"></b-form-select>
         </b-form-group>
-        <b-form-group label="Location:" horizontal label-class="text-sm" label-for="location" label-size="sm">
+        <b-form-group label="Location:" label-cols="3" label-class="text-sm-right" label-for="location" label-size="sm">
             <b-form-input id="location" v-model="location" type="text" placeholder="School Location"></b-form-input>
         </b-form-group>
 
         <div id="school">
-            <b-form-group horizontal label="Accomplishments:" label-class="text-sm" label-for="title" label-size="sm">
+            <b-form-group label-cols="3" label="Accomplishments:" label-class="text-sm" label-for="title" label-size="sm">
                 <b-form-input class="merit" v-model="merit1" type="text" placeholder="(E.g. degree, diploma, certificate, etc)"></b-form-input>
                 <b-form-input v-if="meritCount >= 2" class="merit" v-model="merit2" type="text" placeholder="(E.g. degree, diploma, certificate, etc)"></b-form-input>
                 <b-form-input v-if="meritCount >= 3" class="merit" v-model="merit3" type="text" placeholder="(E.g. degree, diploma, certificate, etc)"></b-form-input>

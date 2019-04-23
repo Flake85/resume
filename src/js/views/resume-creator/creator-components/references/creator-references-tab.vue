@@ -2,48 +2,48 @@
     <b-card :bg-variant="cardBG">
         <h3 class="left_align">References</h3>
             <b-form-group>
-                <b-form-group horizontal label="Acquaintance:" label-class="text-sm" label-for="title" label-size="sm">
+                <b-form-group label-cols="3" label="Acquaintance:" label-class="text-sm-right" label-for="title" label-size="sm">
                     <b-form-input v-model="reference1" id="reference1" type="text" placeholder="Reference's Name"></b-form-input>
-                    <b-form-group horizontal label="Relation:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Relation:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="relation1" class="tasks1" type="text" placeholder="How do you know this person?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Company:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Company:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="company1" class="tasks1" type="text" placeholder="What company do they work for?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Title:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Title:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="title1" class="tasks1" type="text" placeholder="What is their company title?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Contact Number:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Contact Number:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="contactNumber1" class="tasks1" type="text" placeholder="What is their contact number?"></b-form-input>
                     </b-form-group>
                 </b-form-group>
-                <b-form-group v-if="referenceCount > 0" horizontal label="Acquaintance:" label-class="text-sm" label-for="title" label-size="sm">
+                <b-form-group v-if="referenceCount > 0" horizontal label="Acquaintance:" label-class="text-sm-right" label-for="title" label-size="sm">
                     <b-form-input v-model="reference2" id="reference2" type="text" placeholder="Reference's Name"></b-form-input>
-                    <b-form-group horizontal label="Relation:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Relation:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="relation2" class="tasks2" type="text" placeholder="How do you know this person?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Company:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Company:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="company2" class="tasks2" type="text" placeholder="What company do they work for?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Title:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Title:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="title2" class="tasks2" type="text" placeholder="What is their company title?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Contact Number:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Contact Number:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="contactNumber2" class="tasks2" type="text" placeholder="What is their contact number?"></b-form-input>
                     </b-form-group>
                 </b-form-group>
-                <b-form-group v-if="referenceCount > 1" horizontal label="Acquaintance:" label-class="text-sm" label-for="title" label-size="sm" >
+                <b-form-group v-if="referenceCount > 1" label-cols="3" label="Acquaintance:" label-class="text-sm-right" label-for="title" label-size="sm" >
                     <b-form-input v-model="reference3" class="reference3" type="text" placeholder="Reference's Name"></b-form-input>
-                    <b-form-group horizontal label="Relation:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Relation:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="relation3" class="tasks1" type="text" placeholder="How do you know this person?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Company:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Company:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="company3" class="tasks1" type="text" placeholder="What company do they work for?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Title:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Title:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="title3" class="tasks1" type="text" placeholder="What is their company title?"></b-form-input>
                     </b-form-group>
-                    <b-form-group horizontal label="Contact Number:" label-class="text-sm" label-size="sm">
+                    <b-form-group label-cols="3" label="Contact Number:" label-class="text-sm-right" label-size="sm">
                         <b-form-input v-model="contactNumber3" class="tasks1" type="text" placeholder="What is their contact number?"></b-form-input>
                     </b-form-group>
                 </b-form-group>

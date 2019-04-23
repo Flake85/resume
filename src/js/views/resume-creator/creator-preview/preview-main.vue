@@ -2,7 +2,7 @@
     <div id="live-preview" >
         <h1 class="text-center headerFont">Preview</h1>
         <b-card border-variant="info" header-bg-variant="info" header-text-variant="white" class="card resume-card"
-                :bg-variant="cardBG" align="center">
+                :bg-variant="cardBG">
             <div :class="cardText">
                 <preview-contact :contact-info="contactInfo"/>
                 <preview-employment :employer-info="employerInfo" />

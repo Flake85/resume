@@ -16,7 +16,7 @@
         <div class="row">
             <p><strong>Front-End Developer</strong></p>
         </div>
-        <div class="row">
+        <div class="row resume-ul">
             <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -31,12 +31,7 @@
 
 <script>
     export default {
-        name: 'uniti',
-        data(){
-            return{
-
-            }
-        }
+        name: 'uniti'
     }
 </script>
 
