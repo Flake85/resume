@@ -2,7 +2,7 @@
     <div id="builder" class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
-                <h1 class="text-center headerFont">Form</h1>
+                <h1 class="text-center">Form</h1>
                 <b-card border-variant="dark"
                         header-bg-variant="info"
                         header-text-variant="white"

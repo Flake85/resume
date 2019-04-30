@@ -40,7 +40,7 @@
         },
         computed: {
             cardBG(){ return (this.darkMode ? "dark" : "light"); },
-            schoolCount(){ return 6 - this.educationInfo.length }
+            schoolCount(){ return 5 - this.educationInfo.length }
         },
         methods: {
             activeTabBG(idx){

@@ -1,9 +1,15 @@
 <template>
     <div id="live-preview" >
-        <h1 class="text-center headerFont">Preview</h1>
+        <h1 class="text-center">Preview</h1>
         <b-card border-variant="info" header-bg-variant="info" header-text-variant="white" class="card resume-card"
                 :bg-variant="cardBG">
             <div :class="cardText">
+                <p v-if="contactInfo.length === 0 &&
+                         employerInfo.length === 0 &&
+                         educationInfo.length === 0 &&
+                         referenceInfo.length === 0">
+                    Update the provided forms to see preview!
+                </p>
                 <preview-contact :contact-info="contactInfo"/>
                 <preview-employment :employer-info="employerInfo" />
                 <preview-education :education-info="educationInfo" />
