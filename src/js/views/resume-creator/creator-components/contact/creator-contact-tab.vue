@@ -73,11 +73,10 @@
                       label-for="contact_number"
                       label-size="sm">
             <b-form-input id="contact_number"
-                          v-model="contact_number"
+                          v-model="num"
                           type="tel"
                           placeholder="(123)456-7890"></b-form-input>
         </b-form-group>
-        <b-btn @click="addContactInfo" variant="info">Update Contact Info</b-btn>
     </b-card>
 </template>
 
@@ -90,33 +89,43 @@
         },
         data(){
             return{
-                f_name: '',
-                l_name: '',
-                street_address: '',
-                city: '',
-                zip: '',
-                email: '',
-                contact_number: '',
-                state: '',
                 state_options: states
             }
         },
         computed: {
+            f_name: {
+                get() { return this.$store.state.f_name },
+                set(value) { this.$store.commit('updateFname', value) }
+            },
+            l_name: {
+                get() { return this.$store.state.l_name },
+                set(value) { this.$store.commit('updateLname', value) }
+            },
+            street_address: {
+                get() { return this.$store.state.street_address },
+                set(value) { this.$store.commit('updateStreet_address', value) }
+            },
+            city: {
+                get() { return this.$store.state.city },
+                set(value) { this.$store.commit('updateCity', value) }
+            },
+            state: {
+                get() { return this.$store.state.state },
+                set(value) { this.$store.commit('updateState', value) }
+            },
+            zip: {
+                get() { return this.$store.state.zip },
+                set(value) {this.$store.commit('updateZip', value)}
+            },
+            email: {
+                get() { return this.$store.state.email },
+                set(value) { this.$store.commit('updateEmail', value) }
+            },
+            num: {
+                get() { return this.$store.state.num },
+                set(value) { this.$store.commit('updateNum', value) }
+            },
             cardBG(){ return (this.darkMode ? "dark" : "light"); },
-        },
-        methods: {
-            addContactInfo(){
-                this.$emit('add-contact', {
-                    firstName: this.f_name,
-                    lastName: this.l_name,
-                    streetAddress: this.street_address,
-                    city: this.city,
-                    state: this.state,
-                    zip: this.zip,
-                    email: this.email,
-                    contactNum: this.contact_number
-                })
-            }
         }
     }
 </script>

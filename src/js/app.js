@@ -1,9 +1,10 @@
 import Vue from 'vue';
+import store from './store';
 import 'bootstrap';
 import BootstrapVue from 'bootstrap-vue';
 import AppMain from './app-main';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createRouter } from "../../routes";
+import { createRouter } from "./routes";
 
 Vue.use(BootstrapVue);
 require('jquery');
@@ -19,5 +20,6 @@ router.beforeEach((to, from, next) => {
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(AppMain)
 });

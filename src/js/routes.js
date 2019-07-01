@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './src/js/views/Home/main-home';
-import About from './src/js/views/About/main-about';
-import Contact from './src/js/views/Contact/main-contact';
-import Resume from './src/js/views/About/resume/main-resume';
-import Builder from './src/js/views/resume-creator/resume-builder-main';
+import Home from './views/Home/main-home';
+import About from './views/About/main-about';
+import Contact from './views/Contact/main-contact';
+import Resume from './views/About/resume/main-resume';
+import Builder from './views/resume-creator/resume-builder-main';
 
 Vue.use(Router);
 
