@@ -9,7 +9,7 @@
                 header-text-variant="light">
             <p :class="cardText">
                 <i class="fas fw fa-envelope"></i> E-mail Address: Flechas.Bentley@gmail.com (<em>Preferred Method</em>)<br>
-                <i class="fab fa-github-square"></i> GitHub: <a href="https://github.com/Flake85">Flake85</a><br>
+                <i class="fab fa-github-square"></i> GitHub: <a href="https://github.com/Flake85" target="_blank">Flake85</a><br>
                 <i class="fas fw fa-phone"></i> Contact #: 1(318)880-3181<br>
                 <i class="fas fa-location-arrow"></i> Location: Pineville, LA
             </p>
@@ -18,14 +18,11 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         name: 'contact',
-        props: {
-            darkMode: {type: Boolean, required: true}
-        },
         computed: {
-            cardText(){ return (this.darkMode ? "darkCardText" : "dayCardText") },
-            cardBG(){ return (this.darkMode ? "dark" : "light") }
+            ...mapGetters([ 'cardBG', 'cardText' ])
         }
     }
 </script>

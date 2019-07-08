@@ -21,9 +21,9 @@
                             :bg-variant="cardBG">
                         <div :class="cardText">
                             <hr>
-                            <b-collapse visible id="employment"><employment :darkMode="darkMode" /></b-collapse>
-                            <b-collapse visible id="education"><education :darkMode="darkMode" /></b-collapse>
-                            <b-collapse visible id="resources"><programming-srcs :darkMode="darkMode" /></b-collapse>
+                            <b-collapse visible id="employment"><employment /></b-collapse>
+                            <b-collapse visible id="education"><education /></b-collapse>
+                            <b-collapse visible id="resources"><programming-srcs /></b-collapse>
                         </div>
                     </b-card>
                 </div>
@@ -38,11 +38,9 @@
     import Employment from "./employment/main-employment";
     import VerticalBtns from './resume-components/vertical-stck-btns'
     import HorizontalBtns from "./resume-components/horizontal-stck-btns";
+    import { mapGetters } from 'vuex';
     export default {
         name: 'resume',
-        props: {
-            darkMode: {type: Boolean, required: true}
-        },
         components: {
             HorizontalBtns,
             Employment,
@@ -51,8 +49,7 @@
             VerticalBtns
         },
         computed: {
-            cardText(){ return (this.darkMode ? "darkCardText" : "dayCardText"); },
-            cardBG(){ return (this.darkMode ? "dark" : "light"); }
+            ...mapGetters([ 'cardBG', 'cardText' ])
         }
     }
 </script>

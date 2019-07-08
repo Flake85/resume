@@ -4,9 +4,8 @@
         <h2>{{ f_name }} {{ l_name }}</h2>
         <p>{{ street_address }}</p>
         <div class="row justify-content-center">
-            <p>{{ city }}</p>
-            <p v-if="city !== '' && state !== ''">, {{ state }} {{ zip }}</p>
-            <p v-else>{{ state }} {{ zip }}</p>
+            <p v-if="city !== '' && state !== ''">{{ city }}, {{ state }} {{ zip }}</p>
+            <p v-else>{{ city }} {{ state }} {{ zip }}</p>
         </div>
         <p>{{ email }}</p>
         <p>{{ num }}</p>

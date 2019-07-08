@@ -5,15 +5,15 @@
         <div >
             <b-tabs small v-model="tabIndex" pills>
                 <b-tab :title="companyName1" :title-link-class="activeTabBG(0)">
-                    <EmploymentForm :dark-mode="darkMode" @update-employer="addEmployer1Info" /> </b-tab>
+                    <EmploymentForm @update-employer="addEmployer1Info" /> </b-tab>
                 <b-tab v-if="companyName1 !== 'Untitled'" :title="companyName2" :title-link-class="activeTabBG(1)">
-                    <EmploymentForm :dark-mode="darkMode" @update-employer="addEmployer2Info"/> </b-tab>
+                    <EmploymentForm @update-employer="addEmployer2Info"/> </b-tab>
                 <b-tab v-if="companyName2 !== 'Untitled'" :title="companyName3" :title-link-class="activeTabBG(2)">
-                    <EmploymentForm :dark-mode="darkMode" @update-employer="addEmployer3Info"/> </b-tab>
+                    <EmploymentForm @update-employer="addEmployer3Info"/> </b-tab>
                 <b-tab v-if="companyName3 !== 'Untitled'" :title="companyName4" :title-link-class="activeTabBG(3)">
-                    <EmploymentForm :dark-mode="darkMode" @update-employer="addEmployer4Info"/> </b-tab>
+                    <EmploymentForm @update-employer="addEmployer4Info"/> </b-tab>
                 <b-tab v-if="companyName4 !== 'Untitled'" :title="companyName5" :title-link-class="activeTabBG(4)">
-                    <EmploymentForm :dark-mode="darkMode" @update-employer="addEmployer5Info"/> </b-tab>
+                    <EmploymentForm @update-employer="addEmployer5Info"/> </b-tab>
             </b-tabs>
         </div>
     </b-card>
@@ -21,12 +21,12 @@
 
 <script>
     import EmploymentForm from "./creator-employment-form";
+    import { mapGetters } from 'vuex';
 
     export default {
         name: 'employment-tab',
         components: {EmploymentForm},
         props: {
-            darkMode: { type: Boolean, required: true },
             employerInfo: { type: Array, required: true }
         },
         data(){
@@ -40,15 +40,15 @@
             }
         },
         computed: {
-            cardBG(){ return (this.darkMode ? "dark" : "light"); },
+            ...mapGetters([ 'cardBG' ]),
             employerCount(){ return 5 - this.employerInfo.length } },
         methods: {
             activeTabBG(idx){
-                if(this.tabIndex === idx && this.darkMode) {
+                if(this.tabIndex === idx && this.$store.state.darkmode.darkMode) {
                     return ['bg-secondary', 'text-light'];
                 } else if (this.tabIndex === idx && !this.darkMode) {
                     return ['bg-info', 'text-light'];
-                } else if (this.darkMode && this.tabIndex !== idx) {
+                } else if (this.$store.state.darkmode.darkMode && this.tabIndex !== idx) {
                     return ['bg-dark', 'text-light']
                 }
                 else { return ['bg-light', 'text-dark'] }

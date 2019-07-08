@@ -20,7 +20,11 @@ const mutations = {
     updateNum(state, num) { state.num = num }
 };
 
+const actions = {
+
+};
 export default {
     state,
     mutations,
+    actions
 };

@@ -4,7 +4,7 @@
         <b-card border-variant="info" header-bg-variant="info" header-text-variant="white" class="card resume-card"
                 :bg-variant="cardBG">
             <div :class="cardText">
-                <preview-contact :contact-info="contactInfo"/>
+                <preview-contact />
                 <preview-employment :employer-info="employerInfo" />
                 <preview-education :education-info="educationInfo" />
                 <preview-references :reference-info="referenceInfo" />
@@ -21,15 +21,13 @@
         name: 'live-preview',
         components: {PreviewReferences, PreviewEducation, PreviewEmployment, PreviewContact},
         props: {
-            darkMode: {type: Boolean, required: true},
-            contactInfo: {type: Array, required: true},
             employerInfo: {type: Array, required: true},
             educationInfo: {type: Array, required: true},
             referenceInfo: {type: Array, required: true}
         },
         computed: {
-            cardText(){ return (this.darkMode ? "darkCardText" : "dayCardText"); },
-            cardBG(){ return (this.darkMode ? "dark" : "light"); },
+            cardText(){ return (this.$store.state.darkmode.darkMode ? "darkCardText" : "dayCardText"); },
+            cardBG(){ return (this.$store.state.darkmode.darkMode ? "dark" : "light"); },
         }
     }
 </script>

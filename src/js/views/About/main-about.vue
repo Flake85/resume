@@ -46,7 +46,7 @@
                         commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
                         nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
                     </p>
-                    <router-link :darkMode="darkMode" to="/resume" >Click here to view my employment history!</router-link>
+                    <router-link to="/resume" >Click here to view my employment history!</router-link>
                 </b-media>
             </div>
         </b-card>
@@ -55,15 +55,12 @@
 
 <script>
     const moment = require('moment');
+    import { mapGetters } from 'vuex';
     export default {
         name: 'about',
-        props: {
-            darkMode: {type: Boolean, required: true}
-        },
         computed: {
-            age: ((date)=>{ return moment(date).diff(moment(19851226,'YYYYMMDD'), 'years')}),
-            cardText(){ return (this.darkMode ? "darkCardText about-text" : "dayCardText about-text") },
-            cardBG(){ return (this.darkMode ? "dark" : "light") }
+            ...mapGetters([ 'cardBG', 'cardText' ]),
+            age: ((date)=>{ return moment(date).diff(moment(19851226,'YYYYMMDD'), 'years')})
         }
     }
 </script>

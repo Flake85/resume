@@ -5,15 +5,15 @@
         <div >
             <b-tabs small v-model="tabIndex" pills>
                 <b-tab :title="schoolName1" :title-link-class="activeTabBG(0)">
-                    <EducationForm :dark-mode="darkMode" @update-education="addEducation1Info" /> </b-tab>
+                    <EducationForm @update-education="addEducation1Info" /> </b-tab>
                 <b-tab v-if="schoolName1 !== 'Untitled'" :title="schoolName2" :title-link-class="activeTabBG(1)">
-                    <EducationForm :dark-mode="darkMode" @update-education="addEducation2Info"/> </b-tab>
+                    <EducationForm @update-education="addEducation2Info"/> </b-tab>
                 <b-tab v-if="schoolName2 !== 'Untitled'" :title="schoolName3" :title-link-class="activeTabBG(2)">
-                    <EducationForm :dark-mode="darkMode" @update-education="addEducation3Info"/> </b-tab>
+                    <EducationForm @update-education="addEducation3Info"/> </b-tab>
                 <b-tab v-if="schoolName3 !== 'Untitled'" :title="schoolName4" :title-link-class="activeTabBG(3)">
-                    <EducationForm :dark-mode="darkMode" @update-education="addEducation4Info"/> </b-tab>
+                    <EducationForm @update-education="addEducation4Info"/> </b-tab>
                 <b-tab v-if="schoolName4 !== 'Untitled'" :title="schoolName5" :title-link-class="activeTabBG(4)">
-                    <EducationForm :dark-mode="darkMode" @update-education="addEducation5Info"/> </b-tab>
+                    <EducationForm @update-education="addEducation5Info"/> </b-tab>
             </b-tabs>
         </div>
     </b-card>
@@ -21,11 +21,11 @@
 
 <script>
     import EducationForm from './creator-education-form';
+    import { mapGetters } from 'vuex';
     export default {
         name: 'education-tab',
         components: {EducationForm},
         props: {
-            darkMode: { type: Boolean, required: true },
             educationInfo: { type: Array, required: true }
         },
         data(){
@@ -39,16 +39,16 @@
             }
         },
         computed: {
-            cardBG(){ return (this.darkMode ? "dark" : "light"); },
+            ...mapGetters([ 'cardBG' ]),
             schoolCount(){ return 6 - this.educationInfo.length }
         },
         methods: {
             activeTabBG(idx){
-                if(this.tabIndex === idx && this.darkMode) {
+                if(this.tabIndex === idx && this.$store.state.darkmode.darkMode) {
                     return ['bg-secondary', 'text-light'];
-                } else if (this.tabIndex === idx && !this.darkMode) {
+                } else if (this.tabIndex === idx && !this.$store.state.darkmode.darkMode) {
                     return ['bg-info', 'text-light'];
-                } else if (this.darkMode && this.tabIndex !== idx) {
+                } else if (this.$store.state.darkmode.darkMode && this.tabIndex !== idx) {
                     return ['bg-dark', 'text-light']
                 }
                 else { return ['bg-light', 'text-dark'] }

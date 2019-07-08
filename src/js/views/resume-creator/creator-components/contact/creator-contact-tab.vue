@@ -77,55 +77,51 @@
                           type="tel"
                           placeholder="(123)456-7890"></b-form-input>
         </b-form-group>
+        <button @click="modelName('f_name')">test</button>
     </b-card>
 </template>
 
 <script>
     import states from '../../../../modules/stateOptions';
+    import { mapGetters } from 'vuex';
+
     export default {
         name: 'contact-tab',
-        props: {
-            darkMode: { type: Boolean, required: true }
-        },
-        data(){
-            return{
-                state_options: states
-            }
-        },
+        data() { return{ state_options: states }},
         computed: {
+            ...mapGetters([ 'cardBG' ]),
             f_name: {
                 get() { return this.$store.state.f_name },
-                set(value) { this.$store.commit('updateFname', value) }
+                set(fName) { this.$store.commit('updateFname', fName) }
             },
             l_name: {
                 get() { return this.$store.state.l_name },
-                set(value) { this.$store.commit('updateLname', value) }
+                set(lName) { this.$store.commit('updateLname', lName) }
             },
             street_address: {
                 get() { return this.$store.state.street_address },
-                set(value) { this.$store.commit('updateStreet_address', value) }
+                set(stAddress) { this.$store.commit('updateStreet_address', stAddress) }
             },
             city: {
                 get() { return this.$store.state.city },
-                set(value) { this.$store.commit('updateCity', value) }
+                set(city) { this.$store.commit('updateCity', city) }
             },
             state: {
                 get() { return this.$store.state.state },
-                set(value) { this.$store.commit('updateState', value) }
+                set(state) { this.$store.commit('updateState', state) }
             },
             zip: {
                 get() { return this.$store.state.zip },
-                set(value) {this.$store.commit('updateZip', value)}
+                set(zip) { this.$store.commit('updateZip', zip) }
             },
             email: {
                 get() { return this.$store.state.email },
-                set(value) { this.$store.commit('updateEmail', value) }
+                set(email) { this.$store.commit('updateEmail', email) }
             },
             num: {
                 get() { return this.$store.state.num },
-                set(value) { this.$store.commit('updateNum', value) }
-            },
-            cardBG(){ return (this.darkMode ? "dark" : "light"); },
+                set(num) { this.$store.commit('updateNum', num) }
+            }
         }
     }
 </script>

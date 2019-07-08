@@ -13,10 +13,9 @@
                         <div>
                             <b-tabs small v-model="tabIndex" pills>
                                 <b-tab title="Contact" :title-link-class="activeTabBG(0)">
-                                    <contact-tab :darkMode="darkMode" @add-contact="addContact" /></b-tab>
+                                    <contact-tab /></b-tab>
                                 <b-tab title="Employment" :title-link-class="activeTabBG(1)">
-                                    <employment-tab :dark-mode="darkMode"
-                                                    :employerInfo="employerInfo"
+                                    <employment-tab :employerInfo="employerInfo"
                                                     @add-employer1="addEmployer1"
                                                     @add-employer2="addEmployer2"
                                                     @add-employer3="addEmployer3"
@@ -24,15 +23,14 @@
                                                     @add-employer5="addEmployer5" /></b-tab>
 
                                 <b-tab title="Education" :title-link-class="activeTabBG(2)">
-                                    <education-tab :dark-mode="darkMode"
-                                                   :educationInfo="educationInfo"
+                                    <education-tab :educationInfo="educationInfo"
                                                    @add-education1="addEducation1"
                                                    @add-education2="addEducation2"
                                                    @add-education3="addEducation3"
                                                    @add-education4="addEducation4"
                                                    @add-education5="addEducation5" /></b-tab>
                                 <b-tab title="References" :title-link-class="activeTabBG(3)">
-                                    <references-tab :dark-mode="darkMode" @add-references="addReferences" />
+                                    <references-tab @add-references="addReferences" />
                                 </b-tab>
                             </b-tabs>
                         </div>
@@ -40,8 +38,9 @@
                 </b-card>
             </div>
             <div class="col-lg-6">
-                <live-preview :dark-mode="darkMode" :contact-info="contactInfo" :employer-info="employerInfo"
-                              :education-info="educationInfo" :reference-info="referenceInfo" />
+                <live-preview :employer-info="employerInfo"
+                              :education-info="educationInfo"
+                              :reference-info="referenceInfo" />
             </div>
         </div>
     </div>
@@ -53,35 +52,29 @@
     import EmploymentTab from "./creator-components/employment/creator-employment-tab";
     import EducationTab from "./creator-components/education/creator-education-tab";
     import ReferencesTab from "./creator-components/references/creator-references-tab";
+    import { mapGetters } from 'vuex';
     export default {
         name: 'builder',
         components: {ReferencesTab, EducationTab, EmploymentTab, LivePreview, ContactTab},
-        props: {
-            darkMode: { type: Boolean, required: true }
-        },
         data(){
             return{
                 tabIndex: 0,
-                contactInfo: [],
                 employerInfo: [],
                 educationInfo: [],
                 referenceInfo: []
             }
         },
         computed: {
-            cardText(){ return (this.darkMode ? "darkCardText" : "dayCardText"); },
-            cardBG(){ return (this.darkMode ? "dark" : "light"); },
+            ...mapGetters([ 'cardText', 'cardBG'])
         },
         methods: {
             activeTabBG(idx){
-                if(this.tabIndex === idx && this.darkMode) {
+                if(this.tabIndex === idx && this.$store.state.darkmode.darkMode) {
                     return ['bg-dark', 'text-light'];
-                } else if (this.tabIndex === idx && !this.darkMode) {
+                } else if (this.tabIndex === idx && !this.$store.state.darkmode.darkMode) {
                     return ['bg-light', 'text-dark'];
                 } else { return ['bg-info', 'text-light'] }
             },
-            addContact(contact){ this.contactInfo.length === 0 ? this.contactInfo.push(contact)
-                : this.contactInfo.splice(0,1,contact); },
             addEmployer1(employer){ this.employerInfo.length === 0 ? this.employerInfo.push(employer)
                 : this.employerInfo.splice(0,1,employer); },
             addEmployer2(employer){ this.employerInfo.length === 1 ? this.employerInfo.push(employer)

@@ -107,20 +107,17 @@
                 </b-form-text>
             </b-form-group>
         </div>
-
         <b-btn v-if="companyName === ''" @click="updateEmployer" :variant="btnColor" btnColor>Update Employer Info</b-btn>
         <b-btn v-else @click="updateEmployer" :variant="btnColor">Update {{ companyName }}</b-btn>
     </b-card>
 </template>
 
 <script>
-    import months from '../../../../modules/monthOptions'
-    import years from '../../../../modules/yearOptions'
+    import months from '../../../../modules/monthOptions';
+    import years from '../../../../modules/yearOptions';
+    import { mapGetters } from 'vuex';
     export default {
         name: 'employment-form',
-        props: {
-            darkMode:{ type: Boolean, required: true }
-        },
         data(){
             return{
                 months,
@@ -144,8 +141,7 @@
             }
         },
         computed: {
-            secondaryCardBG(){ return (this.darkMode ? "secondary" : "info") },
-            btnColor(){ return (this.darkMode ? "info" : "primary") },
+            ...mapGetters([ 'secondaryCardBG', 'btnColor' ]),
             jobDutyTitle1(){ return this.title1 + " Job Duties:" },
             jobDutyTitle2(){ return this.title2 + " Job Duties:" },
             jobDutyTitle3(){ return this.title3 + " Job Duties:" },

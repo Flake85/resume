@@ -43,13 +43,11 @@
 </template>
 
 <script>
-    import months from '../../../../modules/monthOptions'
-    import years from '../../../../modules/yearOptions'
+    import { mapGetters } from 'vuex';
+    import months from '../../../../modules/monthOptions';
+    import years from '../../../../modules/yearOptions';
     export default {
         name: 'education-form',
-        props: {
-            darkMode:{ type: Boolean, required: true }
-        },
         data(){
             return{
                 months,
@@ -65,8 +63,7 @@
             }
         },
         computed: {
-            secondaryCardBG(){ return (this.darkMode ? "secondary" : "info") },
-            btnColor(){ return (this.darkMode ? "info" : "primary") }
+            ...mapGetters([ 'secondaryCardBG', 'btnColor' ]),
         },
         methods: {
             updateEducation(){
@@ -85,7 +82,6 @@
                 }
             },
             addMeritField(){ if(this.meritCount < 6) { return this.meritCount++; } },
-
         }
     }
 </script>

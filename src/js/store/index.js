@@ -4,6 +4,7 @@ import contact from './modules/contact';
 import education from './modules/education';
 import employment from './modules/employment';
 import references from './modules/references';
+import darkmode from './modules/darkmode';
 
 Vue.use(Vuex);
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
         education,
         employment,
         references,
+        darkmode
     }
 })

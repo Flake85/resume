@@ -1,24 +1,38 @@
 <template>
-    <div id="references" v-if="referenceInfo.length > 0">
+    <div id="references" v-if="reference1 !== '' || reference2 !== '' || reference3 !== ''">
         <h3 align="center" class="text-dark headerFont"><i class="fas fw fa-address-book"></i><br> References</h3>
-        <div v-for="(person, idx) in referenceInfo" :key="idx">
-            <div class="row">
+            <div class="row" align="left">
                 <ul>
-                    <li v-if="person.reference1.name !== ''">{{ person.reference1.name }}: {{ person.reference1.relation }}
-                    {{ person.reference1.company }} {{ person.reference1.title }} {{ person.reference1.number }}</li>
-                    <li v-if="person.reference2.name !== ''">{{ person.reference2.name }}: {{ person.reference2.relation }}
-                    {{ person.reference2.company }} {{ person.reference2.title }} {{ person.reference2.number }}</li>
-                    <li v-if="person.reference3.name !== ''">{{ person.reference3.name }}: {{ person.reference3.relation }}
-                    {{ person.reference3.company }} {{ person.reference3.title }} {{ person.reference3.number }}</li>
+                    <li>{{ reference1 }}: {{ relation1 }} {{ company1 }} {{ title1 }} {{ number1 }}</li>
+                    <li v-if="reference2 !== ''">{{ reference2 }}: {{ relation2 }} {{ company2 }} {{ title2 }} {{ number2 }}</li>
+                    <li v-if="reference3 !== ''">{{ reference3 }}: {{ relation3 }} {{ company3 }} {{ title3 }} {{ number3 }}</li>
                 </ul>
             </div>
-        </div>
+
         <hr class="previewHR">
     </div>
 </template>
 <script>
     export default {
         name: 'preview-references',
-        props: {referenceInfo:{type: Array, required: true}}
+        computed: {
+            reference1(){ return this.$store.state.references.reference1 },
+            relation1(){ return this.$store.state.references.relation1 },
+            company1(){ return this.$store.state.references.company1 },
+            title1(){ return this.$store.state.references.title1 },
+            number1(){ return this.$store.state.references.num1 },
+            //ref2
+            reference2(){ return this.$store.state.references.reference2 },
+            relation2(){ return this.$store.state.references.relation2 },
+            company2(){ return this.$store.state.references.company2 },
+            title2(){ return this.$store.state.references.title2 },
+            number2(){ return this.$store.state.references.num2 },
+            //ref3
+            reference3(){ return this.$store.state.references.reference3 },
+            relation3(){ return this.$store.state.references.relation3 },
+            company3(){ return this.$store.state.references.company3 },
+            title3(){ return this.$store.state.references.title3 },
+            number3(){ return this.$store.state.references.num3 }
+        }
     }
 </script>

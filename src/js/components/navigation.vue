@@ -16,10 +16,10 @@
                     <div>
                         <b-dropdown variant="info" right text="Extras" class="nav-link">
                             <b-dropdown-item ><router-link to="/creator" exact >Resume Creator</router-link></b-dropdown-item>
-                            <b-dropdown-item v-if="darkMode" @click="toggleDarkMode" >
+                            <b-dropdown-item v-if="$store.state.darkmode.darkMode" @click="toggleDark" >
                                 Dark Mode &#10004;
                             </b-dropdown-item>
-                            <b-dropdown-item v-else-if="!darkMode" variant="outline-warning" @click="toggleDarkMode">
+                            <b-dropdown-item v-else-if="!$store.state.darkmode.darkMode" variant="outline-warning" @click="toggleDark">
                                 Enable Dark Mode
                             </b-dropdown-item>
                         </b-dropdown>
@@ -33,7 +33,6 @@
 <script>
     export default {
         name: 'navigation',
-        props: { darkMode: { type: Boolean, required: true }},
-        methods: { toggleDarkMode() {this.$emit('toggleDarkMode'); } }
+        methods: { toggleDark(){ this.$store.dispatch('toggleDark').then(); } }
     }
 </script>
