@@ -4,52 +4,61 @@
             <b-form-group label-cols="3" label="Acquaintance:" label-class="text-sm-right" label-for="title" label-size="sm">
                 <b-form-input v-model="reference1" id="reference1" type="text" placeholder="Reference's Name"></b-form-input>
                 <b-form-group label-cols="3" label="Relation:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="relation1" class="tasks" type="text" placeholder="How do you know this person?"></b-form-input>
+                    <b-form-input v-model="relation1" :disabled="validated1" class="tasks" type="text" placeholder="How do you know this person?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Company:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="company1" class="tasks" type="text" placeholder="What company do they work for?"></b-form-input>
+                    <b-form-input v-model="company1" :disabled="validated1" class="tasks" type="text" placeholder="What company do they work for?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Title:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="title1" class="tasks" type="text" placeholder="What is their company title?"></b-form-input>
+                    <b-form-input v-model="title1" :disabled="validated1" class="tasks" type="text" placeholder="What is their company title?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Contact Number:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="contactNumber1" class="tasks" type="text" placeholder="What is their contact number?"></b-form-input>
+                    <b-form-input v-model="contactNumber1" :disabled="validated1" class="tasks" type="text" placeholder="What is their contact number?"></b-form-input>
                 </b-form-group>
             </b-form-group>
         </div>
-        <div id="secRef" v-if="firstRef !== ''">
+        <div id="secRef" v-if="count >= 1">
             <b-form-group label-cols="3" label="Acquaintance:" label-class="text-sm-right" label-for="title" label-size="sm">
                 <b-form-input v-model="reference2" id="reference2" type="text" placeholder="Reference's Name"></b-form-input>
                 <b-form-group label-cols="3" label="Relation:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="relation2" class="tasks" type="text" placeholder="How do you know this person?"></b-form-input>
+                    <b-form-input v-model="relation2" :disabled="validated2" class="tasks" type="text" placeholder="How do you know this person?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Company:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="company2" class="tasks" type="text" placeholder="What company do they work for?"></b-form-input>
+                    <b-form-input v-model="company2" :disabled="validated2" class="tasks" type="text" placeholder="What company do they work for?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Title:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="title2" class="tasks" type="text" placeholder="What is their company title?"></b-form-input>
+                    <b-form-input v-model="title2" :disabled="validated2" class="tasks" type="text" placeholder="What is their company title?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Contact Number:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="contactNumber2" class="tasks" type="text" placeholder="What is their contact number?"></b-form-input>
+                    <b-form-input v-model="contactNumber2" :disabled="validated2" class="tasks" type="text" placeholder="What is their contact number?"></b-form-input>
                 </b-form-group>
             </b-form-group>
         </div>
-        <div id="thirdRef" v-if="secondRef !== ''">
+        <div id="thirdRef" v-if="count >= 2">
             <b-form-group label-cols="3" label="Acquaintance:" label-class="text-sm-right" label-for="title" label-size="sm">
                 <b-form-input v-model="reference3" id="reference3" type="text" placeholder="Reference's Name"></b-form-input>
                 <b-form-group label-cols="3" label="Relation:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="relation3" class="tasks" type="text" placeholder="How do you know this person?"></b-form-input>
+                    <b-form-input v-model="relation3" :disabled="validated3" class="tasks" type="text" placeholder="How do you know this person?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Company:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="company3" class="tasks" type="text" placeholder="What company do they work for?"></b-form-input>
+                    <b-form-input v-model="company3" :disabled="validated3" class="tasks" type="text" placeholder="What company do they work for?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Title:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="title3" class="tasks" type="text" placeholder="What is their company title?"></b-form-input>
+                    <b-form-input v-model="title3" :disabled="validated3" class="tasks" type="text" placeholder="What is their company title?"></b-form-input>
                 </b-form-group>
                 <b-form-group label-cols="3" label="Contact Number:" label-class="text-sm-right" label-size="sm">
-                    <b-form-input v-model="contactNumber3" class="tasks" type="text" placeholder="What is their contact number?"></b-form-input>
+                    <b-form-input v-model="contactNumber3" :disabled="validated3" class="tasks" type="text" placeholder="What is their contact number?"></b-form-input>
                 </b-form-group>
             </b-form-group>
+        </div>
+        <div>
+            <b-form-text id="addReference"
+                         class="clickable"
+                         @click="addReference"
+                         v-if="count < 2">
+                <i class="far fw fa-plus-square"> </i>
+                Add Reference
+            </b-form-text>
         </div>
     </div>
 </template>
@@ -57,7 +66,11 @@
 <script>
     export default{
         name: 'references_form',
+        data(){ return { count: 0 } },
         computed: {
+            validated1(){ return !this.$store.state.references.reference1; },
+            validated2(){ return !this.$store.state.references.reference2; },
+            validated3(){ return !this.$store.state.references.reference3; },
             //first reference
             firstRef(){ return this.$store.state.references.reference1 },
             reference1: {
@@ -123,6 +136,9 @@
                 get() { return this.$store.state.contactNumber3 },
                 set(contactNumber) { this.$store.commit('updateContactNum3', contactNumber) }
             },
+        },
+        methods: {
+            addReference(){ this.count++ }
         }
     }
 </script>

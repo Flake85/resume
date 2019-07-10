@@ -29,8 +29,9 @@
                                                    @add-education3="addEducation3"
                                                    @add-education4="addEducation4"
                                                    @add-education5="addEducation5" /></b-tab>
+
                                 <b-tab title="References" :title-link-class="activeTabBG(3)">
-                                    <references-tab @add-references="addReferences" />
+                                    <references-tab />
                                 </b-tab>
                             </b-tabs>
                         </div>
@@ -39,8 +40,7 @@
             </div>
             <div class="col-lg-6">
                 <live-preview :employer-info="employerInfo"
-                              :education-info="educationInfo"
-                              :reference-info="referenceInfo" />
+                              :education-info="educationInfo" />
             </div>
         </div>
     </div>
@@ -60,8 +60,7 @@
             return{
                 tabIndex: 0,
                 employerInfo: [],
-                educationInfo: [],
-                referenceInfo: []
+                educationInfo: []
             }
         },
         computed: {
