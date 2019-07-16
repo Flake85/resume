@@ -5,9 +5,9 @@
                 :bg-variant="cardBG">
             <div :class="cardText">
                 <preview-contact />
-                <preview-employment :employer-info="employerInfo" />
-                <preview-education :education-info="educationInfo" />
-                <preview-references :reference-info="referenceInfo" />
+                <preview-employment />
+                <preview-education />
+                <preview-references />
             </div>
         </b-card>
     </div>
@@ -17,17 +17,12 @@
     import PreviewEmployment from "./preview-employment";
     import PreviewEducation from "./preview-education";
     import PreviewReferences from "./preview-references";
+    import {mapGetters} from "vuex";
     export default {
         name: 'live-preview',
         components: {PreviewReferences, PreviewEducation, PreviewEmployment, PreviewContact},
-        props: {
-            employerInfo: {type: Array, required: true},
-            educationInfo: {type: Array, required: true},
-            referenceInfo: {type: Array, required: true}
-        },
         computed: {
-            cardText(){ return (this.$store.state.darkmode.darkMode ? "darkCardText" : "dayCardText"); },
-            cardBG(){ return (this.$store.state.darkmode.darkMode ? "dark" : "light"); },
+            ...mapGetters(['cardText', 'cardBG'])
         }
     }
 </script>

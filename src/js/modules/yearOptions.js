@@ -1,5 +1,6 @@
 
 const years = [
+    { value: null, text: "None" },
     { value: 2019, text: "2019" },
     { value: 2018, text: "2018" },
     { value: 2017, text: "2017" },

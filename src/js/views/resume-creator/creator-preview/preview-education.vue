@@ -9,12 +9,12 @@
         </div>
         <div class="row" align="left">
             <ul>
-                <li v-if="merit1_1 !== ''">{{ merit1_1 }}</li>
-                <li v-if="merit2_1 !== ''">{{ merit2_1 }}</li>
-                <li v-if="merit3_1 !== ''">{{ merit3_1 }}</li>
-                <li v-if="merit4_1 !== ''">{{ merit4_1 }}</li>
-                <li v-if="merit5_1 !== ''">{{ merit5_1 }}</li>
-                <li v-if="merit6_1 !== ''">{{ merit6_1 }}</li>
+                <li v-if="merit1_1">{{ merit1_1 }}</li>
+                <li v-if="merit2_1">{{ merit2_1 }}</li>
+                <li v-if="merit3_1">{{ merit3_1 }}</li>
+                <li v-if="merit4_1">{{ merit4_1 }}</li>
+                <li v-if="merit5_1">{{ merit5_1 }}</li>
+                <li v-if="merit6_1">{{ merit6_1 }}</li>
             </ul>
         </div>
         <!--school 2-->

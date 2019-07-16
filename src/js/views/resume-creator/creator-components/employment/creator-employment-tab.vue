@@ -1,47 +1,42 @@
 <template>
     <b-card :bg-variant="cardBG">
         <h3 class="left_align">Employers </h3>
-        <p class="left_align"> ({{ employerCount }} Remaining)</p>
         <div >
             <b-tabs small v-model="tabIndex" pills>
                 <b-tab :title="companyName1" :title-link-class="activeTabBG(0)">
-                    <EmploymentForm @update-employer="addEmployer1Info" /> </b-tab>
-                <b-tab v-if="companyName1 !== 'Untitled'" :title="companyName2" :title-link-class="activeTabBG(1)">
-                    <EmploymentForm @update-employer="addEmployer2Info"/> </b-tab>
-                <b-tab v-if="companyName2 !== 'Untitled'" :title="companyName3" :title-link-class="activeTabBG(2)">
-                    <EmploymentForm @update-employer="addEmployer3Info"/> </b-tab>
-                <b-tab v-if="companyName3 !== 'Untitled'" :title="companyName4" :title-link-class="activeTabBG(3)">
-                    <EmploymentForm @update-employer="addEmployer4Info"/> </b-tab>
-                <b-tab v-if="companyName4 !== 'Untitled'" :title="companyName5" :title-link-class="activeTabBG(4)">
-                    <EmploymentForm @update-employer="addEmployer5Info"/> </b-tab>
+                    <EmploymentForm1 /> </b-tab>
+                <b-tab :title="companyName2" :title-link-class="activeTabBG(1)">
+                    <EmploymentForm2 /> </b-tab>
+                <b-tab :title="companyName3" :title-link-class="activeTabBG(2)">
+                    <EmploymentForm3 /> </b-tab>
+                <b-tab :title="companyName4" :title-link-class="activeTabBG(3)">
+                    <EmploymentForm4 /> </b-tab>
+                <b-tab :title="companyName5" :title-link-class="activeTabBG(4)">
+                    <EmploymentForm5 /> </b-tab>
             </b-tabs>
         </div>
     </b-card>
 </template>
 
 <script>
-    import EmploymentForm from "./creator-employment-form";
+    import EmploymentForm1 from "./employment-form/creator-employment-form1";
+    import EmploymentForm2 from './employment-form/creator-employment-form2';
+    import EmploymentForm3 from './employment-form/creator-employment-form3';
+    import EmploymentForm4 from './employment-form/creator-employment-form4';
+    import EmploymentForm5 from './employment-form/creator-employment-form5';
     import { mapGetters } from 'vuex';
-
     export default {
         name: 'employment-tab',
-        components: {EmploymentForm},
-        props: {
-            employerInfo: { type: Array, required: true }
-        },
-        data(){
-            return{
-                tabIndex: 0,
-                companyName1: 'Untitled',
-                companyName2: 'Untitled',
-                companyName3: 'Untitled',
-                companyName4: 'Untitled',
-                companyName5: 'Untitled'
-            }
-        },
+        components: {EmploymentForm1, EmploymentForm2, EmploymentForm3, EmploymentForm4, EmploymentForm5},
+        data(){ return{ tabIndex: 0, } },
         computed: {
             ...mapGetters([ 'cardBG' ]),
-            employerCount(){ return 5 - this.employerInfo.length } },
+            companyName1(){ return !this.$store.state.employment.company1.companyName ? 'Untitled' : this.$store.state.employment.company1.companyName },
+            companyName2(){ return !this.$store.state.employment.company2.companyName ? 'Untitled' : this.$store.state.employment.company2.companyName },
+            companyName3(){ return !this.$store.state.employment.company3.companyName ? 'Untitled' : this.$store.state.employment.company3.companyName },
+            companyName4(){ return !this.$store.state.employment.company4.companyName ? 'Untitled' : this.$store.state.employment.company4.companyName },
+            companyName5(){ return !this.$store.state.employment.company5.companyName ? 'Untitled' : this.$store.state.employment.company5.companyName },
+        },
         methods: {
             activeTabBG(idx){
                 if(this.tabIndex === idx && this.$store.state.darkmode.darkMode) {
@@ -53,31 +48,9 @@
                 }
                 else { return ['bg-light', 'text-dark'] }
             },
-            addEmployer1Info(employer){
-                this.$emit('add-employer1', employer);
-                this.companyName1 = employer.companyName;
-            },
-            addEmployer2Info(employer){
-                this.$emit('add-employer2', employer);
-                this.companyName2 = employer.companyName;
-            },
-            addEmployer3Info(employer){
-                this.$emit('add-employer3', employer);
-                this.companyName3 = employer.companyName;
-            },
-            addEmployer4Info(employer){
-                this.$emit('add-employer4', employer);
-                this.companyName4 = employer.companyName;
-            },
-            addEmployer5Info(employer){
-                this.$emit('add-employer5', employer);
-                this.companyName5 = employer.companyName;
-            },
-
         }
     }
 </script>
-
 <style>
     .left_align {
         text-align: left;

@@ -1,5 +1,6 @@
 
 const states = [
+    { value: "", text: "None" },
     { value: "AL", text: "Alabama" },
     { value: "AK", text: "Alaska" },
     { value: "AZ", text: "Arizona" },
